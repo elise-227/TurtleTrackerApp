@@ -23,19 +23,20 @@ line_list = file_object.readlines()
 #close file
 file_object.close()
 
-#pretend reading one line from the file 
-lineString= line_list[101]
+#change to for loop 
+for lineString in line_list[17:]:
 
-#split string into a list of data items
-lineData = lineString.split()
 
-# Assign variables to specfic items in the list
-record_id = lineData[0]   # ARGOS tracking record ID
-obs_date = lineData[2]   # Observation date
-ob_lc = lineData[4]       # Observation Location Class
-obs_lat = lineData[6]     # Observation Latitude
-obs_lon = lineData[7]     # Observation Longitude
+    #split string into a list of data items
+    lineData = lineString.split()
 
-#print the location of sara 
-print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat}, lon:{obs_lon} on {obs_date}")
+    # Assign variables to specfic items in the list
+    record_id = lineData[0]   # ARGOS tracking record ID
+    obs_date = lineData[2]   # Observation date
+    ob_lc = lineData[4]       # Observation Location Class
+    obs_lat = lineData[6]     # Observation Latitude
+    obs_lon = lineData[7]     # Observation Longitude
+
+    #print the location of sara 
+    print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat}, lon:{obs_lon} on {obs_date}")
 
