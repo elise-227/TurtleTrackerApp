@@ -15,7 +15,7 @@
 file_name = 'data/raw/Sara.txt'
 
 #create a file object from file 
-file_object = open(file_name, 'r')
+file_object = open(file = file_name, mode = 'r')
 
 #read contents to list 
 line_list = file_object.readlines()
@@ -25,8 +25,10 @@ file_object.close()
 
 #change to for loop 
 for lineString in line_list:
-    if not lineString in ('#','u'):
+        
+    if lineString[0] in ("#", "u"):
         continue
+
 
     #split string into a list of data items
     lineData = lineString.split()
