@@ -24,8 +24,9 @@ line_list = file_object.readlines()
 file_object.close()
 
 #change to for loop 
-for lineString in line_list[17:]:
-
+for lineString in line_list:
+    if not lineString in ('#','u'):
+        continue
 
     #split string into a list of data items
     lineData = lineString.split()
