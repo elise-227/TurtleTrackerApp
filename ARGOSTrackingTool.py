@@ -23,6 +23,10 @@ line_list = file_object.readlines()
 #close file
 file_object.close()
 
+#create empty dictionary 
+date_dict = {}
+location_dict = {}
+
 #change to for loop 
 for lineString in line_list:
         
@@ -39,7 +43,10 @@ for lineString in line_list:
     ob_lc = lineData[4]       # Observation Location Class
     obs_lat = lineData[6]     # Observation Latitude
     obs_lon = lineData[7]     # Observation Longitude
+    
+    date_dict[record_id] = (obs_date)
+    location_dict[record_id] = (obs_lat, obs_lon)
 
     #print the location of sara 
-    print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat}, lon:{obs_lon} on {obs_date}")
+    #print(f"Record {record_id} indicates Sara was seen at lat:{obs_lat}, lon:{obs_lon} on {obs_date}")
 
